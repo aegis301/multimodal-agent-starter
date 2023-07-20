@@ -9,6 +9,9 @@ from steamship.agents.service.agent_service import AgentService
 
 
 class MyAssistant(AgentService):
+    """Minimum viable AgentService implementation."""
+
     def __init__(self, **kwargs):
         super().__init__(**kwargs)
-        self._agent = FunctionsBasedAgent(llm=ChatOpenAI(self.client), tools=[])
+        self._agent = FunctionsBasedAgent(
+            llm=ChatOpenAI(self.client), tools=[])
